@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CommandBars>
+	<Version>0X00020004</Version>
+	<PopupMenu>
+		<Caption lang="en"><![CDATA[DITA Commands]]></Caption>
+		<Caption lang="ru"><![CDATA[Команды DITA]]></Caption>
+		<BeginGroup>false</BeginGroup>
+		<MenuControls>
+			<PopupSubMenu>
+				<Caption lang="en"><![CDATA[&Table]]></Caption>
+				<Caption lang="ru"><![CDATA[&Таблица]]></Caption>
+				<BeginGroup>false</BeginGroup>
+				<MenuControls>
+					<PopupMenuItem>
+						<Caption lang="en"><![CDATA[Insert Table	Ctrl+Shift+T]]></Caption>
+						<Caption lang="ru"><![CDATA[Вставить таблицу	Ctrl+Shift+T]]></Caption>
+						<BeginGroup>false</BeginGroup>
+						<DescriptionText lang="en"><![CDATA[Inserts a table.]]></DescriptionText>
+						<DescriptionText lang="ru"><![CDATA[Вставляет новую таблицу.]]></DescriptionText>
+						<OnAction><![CDATA[tableAdd]]></OnAction>
+					</PopupMenuItem>
+					<PopupMenuItem>
+						<Caption lang="en"><![CDATA[Insert Column to the Right	Ctrl+Shift+C]]></Caption>
+						<Caption lang="ru"><![CDATA[Вставить столбец справа	Ctrl+Shift+C]]></Caption>
+						<BeginGroup>true</BeginGroup>
+						<DescriptionText lang="en"><![CDATA[Inserts a table column to the right of the column containing the selection.]]></DescriptionText>
+						<DescriptionText lang="ru"><![CDATA[Вставляет столбец таблицы справа от текущего.]]></DescriptionText>
+						<OnAction><![CDATA[tableInsertColumnsRight]]></OnAction>
+					</PopupMenuItem>
+					<PopupMenuItem>
+						<Caption lang="en"><![CDATA[Insert Column to the Left	Ctrl+Shift+X]]></Caption>
+						<Caption lang="ru"><![CDATA[Вставить столбец слева	Ctrl+Shift+X]]></Caption>
+						<BeginGroup>false</BeginGroup>
+						<DescriptionText lang="en"><![CDATA[Inserts a table column to the left of the column containing the selection]]></DescriptionText>
+						<DescriptionText lang="ru"><![CDATA[Вставляет столбец таблицы слева от текущего.]]></DescriptionText>
+						<OnAction><![CDATA[tableInsertColumnsLeft]]></OnAction>
+					</PopupMenuItem>
+					<PopupMenuItem>
+						<Caption lang="en"><![CDATA[Delete Column	Ctrl+Shift+F]]></Caption>
+						<Caption lang="ru"><![CDATA[Удалить столбец	Ctrl+Shift+F]]></Caption>
+						<BeginGroup>false</BeginGroup>
+						<DescriptionText lang="en"><![CDATA[Deletes the table column containing the selection.]]></DescriptionText>
+						<DescriptionText lang="ru"><![CDATA[Удаляет текущий столбец таблицы.]]></DescriptionText>
+						<OnAction><![CDATA[tableDeleteColumn]]></OnAction>
+					</PopupMenuItem>
+					<PopupMenuItem>
+						<Caption lang="en"><![CDATA[Insert Row Below	Ctrl+Shift+R]]></Caption>
+						<Caption lang="ru"><![CDATA[Вставить строку снизу	Ctrl+Shift+R]]></Caption>
+						<BeginGroup>true</BeginGroup>
+						<DescriptionText lang="en"><![CDATA[Inserts a table row below the row containing the selection.]]></DescriptionText>
+						<DescriptionText lang="ru"><![CDATA[Вставляет строку таблицы ниже текущей.]]></DescriptionText>
+						<OnAction><![CDATA[tableInsertRowsBelow]]></OnAction>
+					</PopupMenuItem>
+					<PopupMenuItem>
+						<Caption lang="en"><![CDATA[Insert Row Above	Ctrl+Shift+E]]></Caption>
+						<Caption lang="ru"><![CDATA[Вставить строку сверху	Ctrl+Shift+E]]></Caption>
+						<BeginGroup>false</BeginGroup>
+						<DescriptionText lang="en"><![CDATA[Inserts a table row above the row containing the selection.]]></DescriptionText>
+						<DescriptionText lang="ru"><![CDATA[Вставляет строку таблицы выше текущей.]]></DescriptionText>
+						<OnAction><![CDATA[tableInsertRowsAbove]]></OnAction>
+					</PopupMenuItem>
+					<PopupMenuItem>
+						<Caption lang="en"><![CDATA[Delete Row	Ctrl+Shift+D]]></Caption>
+						<Caption lang="ru"><![CDATA[Удалить строку	Ctrl+Shift+D]]></Caption>
+						<BeginGroup>false</BeginGroup>
+						<DescriptionText lang="en"><![CDATA[Deletes the table row containing the selection.]]></DescriptionText>
+						<DescriptionText lang="ru"><![CDATA[Удяляет текущую строку таблицы.]]></DescriptionText>
+						<OnAction><![CDATA[tableDeleteRow]]></OnAction>
+					</PopupMenuItem>
+					
+					  <PopupSubMenu>
+						<Caption lang="en"><![CDATA[&Move Row or Column]]></Caption>
+						<Caption lang="ru"><![CDATA[&Переместить строку или столбец]]></Caption>
+						<BeginGroup>false</BeginGroup>
+						<MenuControls>
+						  <PopupMenuItem>
+							<Caption lang="en"><![CDATA[Move Row &Up]]></Caption>
+							<Caption lang="ru"><![CDATA[Переместить строку &вверх]]></Caption>
+							<BeginGroup>false</BeginGroup>
+							<DescriptionText lang="en"><![CDATA[Moves row up.]]></DescriptionText>
+							<DescriptionText lang="ru"><![CDATA[Перемещает строку таблицы вверх.]]></DescriptionText>
+							<OnAction><![CDATA[tableMoveRowUp]]></OnAction>
+						  </PopupMenuItem>
+						  <PopupMenuItem>
+							<Caption lang="en"><![CDATA[Move Row &Down]]></Caption>
+							<Caption lang="ru"><![CDATA[Переместить строку в&низ]]></Caption>
+							<BeginGroup>false</BeginGroup>
+							<DescriptionText lang="en"><![CDATA[Moves row down.]]></DescriptionText>
+							<DescriptionText lang="ru"><![CDATA[Перемещает строку таблицы вниз.]]></DescriptionText>
+							<OnAction><![CDATA[tableMoveRowDown]]></OnAction>
+						  </PopupMenuItem>
+						  <PopupMenuItem>
+							<Caption lang="en"><![CDATA[Move Column &Left]]></Caption>
+							<Caption lang="ru"><![CDATA[Переместить столбец в&лево]]></Caption>
+							<BeginGroup>false</BeginGroup>
+							<DescriptionText lang="en"><![CDATA[Moves column left.]]></DescriptionText>
+							<DescriptionText lang="ru"><![CDATA[Перемещает столбец таблицы влево.]]></DescriptionText>
+							<OnAction><![CDATA[tableMoveColumnLeft]]></OnAction>
+						  </PopupMenuItem>
+						  <PopupMenuItem>
+							<Caption lang="en"><![CDATA[Move Column &Right]]></Caption>
+							<Caption lang="ru"><![CDATA[Переместить столбец в&право]]></Caption>
+							<BeginGroup>false</BeginGroup>
+							<DescriptionText lang="en"><![CDATA[Moves column right.]]></DescriptionText>
+							<DescriptionText lang="ru"><![CDATA[Перемещает столбец таблицы вправо.]]></DescriptionText>
+							<OnAction><![CDATA[tableMoveColumnRight]]></OnAction>
+						  </PopupMenuItem>
+						</MenuControls>
+					  </PopupSubMenu>
+
+					  <PopupSubMenu>
+						<Caption lang="en"><![CDATA[Merge &Cell]]></Caption>
+						<Caption lang="ru"><![CDATA[Объединить &ячейки]]></Caption>
+						<BeginGroup>false</BeginGroup>
+						<MenuControls>
+						  <PopupMenuItem>
+							<Caption lang="en"><![CDATA[Merge Cell &Up]]></Caption>
+							<Caption lang="ru"><![CDATA[Объединить ячейки &вверх]]></Caption>
+							<BeginGroup>false</BeginGroup>
+							<DescriptionText lang="en"><![CDATA[Merge cell up.]]></DescriptionText>
+							<DescriptionText lang="ru"><![CDATA[Объединяет ячейки таблицы вверх.]]></DescriptionText>
+							<OnAction><![CDATA[tableMergeCellUp]]></OnAction>
+						  </PopupMenuItem>
+						  <PopupMenuItem>
+							<Caption lang="en"><![CDATA[Merge Cell &Down]]></Caption>
+							<Caption lang="ru"><![CDATA[Объединить ячейки в&низ]]></Caption>
+							<BeginGroup>false</BeginGroup>
+							<DescriptionText lang="en"><![CDATA[Merge cell down.]]></DescriptionText>
+							<DescriptionText lang="ru"><![CDATA[Объединяет ячейки таблицы вниз.]]></DescriptionText>
+							<OnAction><![CDATA[tableMergeCellDown]]></OnAction>
+						  </PopupMenuItem>
+						  <PopupMenuItem>
+							<Caption lang="en"><![CDATA[Merge Cell &Left]]></Caption>
+							<Caption lang="ru"><![CDATA[Объединить ячейки в&лево]]></Caption>
+							<BeginGroup>false</BeginGroup>
+							<DescriptionText lang="en"><![CDATA[Merge cell left.]]></DescriptionText>
+							<DescriptionText lang="ru"><![CDATA[Объединяет ячейки таблицы слева.]]></DescriptionText>
+							<OnAction><![CDATA[tableMergeCellLeft]]></OnAction>
+						  </PopupMenuItem>
+						  <PopupMenuItem>
+							<Caption lang="en"><![CDATA[Merge Cell &Right]]></Caption>
+							<Caption lang="ru"><![CDATA[Объединить ячейки в&право]]></Caption>
+							<BeginGroup>false</BeginGroup>
+							<DescriptionText lang="en"><![CDATA[Merge cell right.]]></DescriptionText>
+							<DescriptionText lang="ru"><![CDATA[Объединяет ячейки таблицы вправо.]]></DescriptionText>
+							<OnAction><![CDATA[tableMergeCellRight]]></OnAction>
+						  </PopupMenuItem>
+						</MenuControls>
+					  </PopupSubMenu>
+
+					  <PopupMenuItem>
+						<Caption lang="en"><![CDATA[&Split Cell into Columns]]></Caption>
+						<Caption lang="ru"><![CDATA[&Разбить ячейку на столбцы]]></Caption>
+						<BeginGroup>false</BeginGroup>
+						<DescriptionText lang="en"><![CDATA[Splits cell into columns.]]></DescriptionText>
+						<DescriptionText lang="ru"><![CDATA[Разбивает ячейку таблицы по столбцам.]]></DescriptionText>
+						<OnAction><![CDATA[tableSplitCellIntoColumns]]></OnAction>
+					  </PopupMenuItem>
+					  <PopupMenuItem>
+						<Caption lang="en"><![CDATA[Sp&lit Cell into Rows]]></Caption>
+						<Caption lang="ru"><![CDATA[Раз&бить ячейку на строки]]></Caption>
+						<BeginGroup>false</BeginGroup>
+						<DescriptionText lang="en"><![CDATA[Splits cell into rows.]]></DescriptionText>
+						<DescriptionText lang="ru"><![CDATA[Разбивает ячейку таблицы по строкам.]]></DescriptionText>
+						<OnAction><![CDATA[tableSplitCellIntoRows]]></OnAction>
+					  </PopupMenuItem>
+				</MenuControls>
+			</PopupSubMenu>
+		</MenuControls>
+	</PopupMenu>
+</CommandBars>

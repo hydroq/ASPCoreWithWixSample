@@ -1,0 +1,80 @@
+<?xml version='1.0'?>
+<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:xdt="http://www.w3.org/2005/xpath-datatypes" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:saxon="http://saxon.sf.net/" xmlns:axf="http://www.antennahouse.com/names/XSL/Extensions" xmlns:vf="http://xmlcompass.vftis.com/namespace/vfreuse" xmlns:atict="http://www.arbortext.com/namespace/atict" exclude-result-prefixes="xlink xs fn xdt" extension-element-prefixes="saxon">
+
+	<!--
+	*******************************************************************************
+	This xsl is intended for individual adaption of table layout
+	*******************************************************************************
+	-->
+	<!-- ==================================================================== -->
+
+	<!-- global variables to fetch cell bgcolor and fontcolor -->
+	<xsl:variable name="cellbgcolor" select="'0'" saxon:assignable="yes"/>
+	<xsl:variable name="cellfontcolor" select="'0'" saxon:assignable="yes"/>
+
+
+	<xsl:attribute-set name="table">
+		<xsl:attribute name="font-size">10pt</xsl:attribute>
+		<xsl:attribute name="space-before">0.5em</xsl:attribute>
+		<xsl:attribute name="space-after">1.6em</xsl:attribute>
+		<xsl:attribute name="table-omit-header-at-break">false</xsl:attribute>
+		<xsl:attribute name="keep-together.within-column">6</xsl:attribute>
+	</xsl:attribute-set>
+
+	<xsl:attribute-set name="caption-side">
+		<xsl:attribute name="caption-side">after</xsl:attribute>
+	</xsl:attribute-set>
+
+	<xsl:attribute-set name="table-title">
+		<xsl:attribute name="font-size">11pt</xsl:attribute>
+		<xsl:attribute name="space-after">0.7em</xsl:attribute>
+		<xsl:attribute name="keep-with-next.within-page">always</xsl:attribute>
+	</xsl:attribute-set>
+
+	<xsl:template name="tbl-head">
+		<xsl:attribute name="font-size">10pt</xsl:attribute>
+		<xsl:attribute name="font-weight">bold</xsl:attribute>
+		<xsl:attribute name="font-style">normal</xsl:attribute>
+		<xsl:attribute name="text-align">center</xsl:attribute>
+	</xsl:template>
+
+	<xsl:param name="table.border.color">black</xsl:param>
+	<xsl:param name="table.border.style">solid</xsl:param>
+	<xsl:param name="table.border.thickness">0.5pt</xsl:param>
+	<xsl:param name="default.table.width"/>
+	<xsl:param name="table.cell.padding.amount.top" select="'4pt'"/>
+	<xsl:param name="table.cell.padding.amount.bottom" select="'4pt'"/>
+	<xsl:param name="table.cell.padding.amount.left" select="'4pt'"/>
+	<xsl:param name="table.cell.padding.amount.right" select="'4pt'"/>
+
+	<xsl:param name="inhibit-default-colwidth-emission" select="'1'"/>
+	<xsl:param name="doing-cdfo-processing" select="'0'"/>
+
+	<xsl:attribute-set name="table.cell.padding">
+		<xsl:attribute name="margin-left">0pt</xsl:attribute>
+		<xsl:attribute name="margin-right">0pt</xsl:attribute>
+		<xsl:attribute name="padding-top">
+			<xsl:value-of select="$table.cell.padding.amount.top"/>
+		</xsl:attribute>
+		<xsl:attribute name="padding-bottom">
+			<xsl:value-of select="$table.cell.padding.amount.bottom"/>
+		</xsl:attribute>
+		<xsl:attribute name="padding-left">
+			<xsl:value-of select="$table.cell.padding.amount.left"/>
+		</xsl:attribute>
+		<xsl:attribute name="padding-right">
+			<xsl:value-of select="$table.cell.padding.amount.right"/>
+		</xsl:attribute>
+	</xsl:attribute-set>
+
+	<xsl:attribute-set name="table-reset-indents">
+		<xsl:attribute name="start-indent">0pt</xsl:attribute>
+		<xsl:attribute name="end-indent">0pt</xsl:attribute>
+	</xsl:attribute-set>
+
+
+
+
+	<!-- ==================================================================== -->
+
+</xsl:stylesheet>

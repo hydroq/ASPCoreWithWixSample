@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <?define ProductName="REFLEKT ONE Author" ?>
+    <?define ProductVersion="3.3.1" ?>
+    <?define UpgradeCode="06a81104-1e30-463d-87e1-e8a79b4c682a"?>
+    <?define Manufacturer="RE'FLEKT GmbH"?>
+
+    <Product Id="*" Name="$(var.ProductName)" Language="1033" Version="$(var.ProductVersion)" Manufacturer="$(var.Manufacturer)" UpgradeCode="$(var.UpgradeCode)">
+        <Package Platform="x64" InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+        <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate EmbedCab="yes" />
+
+        <WixVariable Id="WixUILicenseRtf" Value="..\..\assets\REFLEKT ONE EULA.rtf" />
+        <WixVariable Id="WixUIBannerBmp" Value="..\..\assets\Installer banner.jpg" />
+        <WixVariable Id="WixUIDialogBmp" Value="..\..\assets\Installer background.jpg" />
+        <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
+
+        <UI>
+            <UIRef Id="WixUI_InstallDir" />
+        </UI>
+
+        <Feature Id="ProductFeature" Title="$(var.ProductName)" Level="1">
+            <ComponentGroupRef Id="OneWebApi_Project" />
+            <ComponentRef Id="ApplicationShortcutDesktop" />
+		</Feature>
+    </Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFiles64Folder">
+				<Directory Id="INSTALLFOLDER" Name="RFOneAuthor" />
+			</Directory>
+
+		    <Directory Id="DesktopFolder" Name="Desktop">
+		        <Component Id="ApplicationShortcutDesktop" Guid="*">
+		            <Shortcut Id="ApplicationDesktopShortcut"
+		                      Name="REFLEKT ONE Author"
+		                      Description="Launch application"
+		                      Target="[INSTALLFOLDER]REFLEKT ONE Author.exe"
+		                      WorkingDirectory="INSTALLFOLDER"/>
+		            <RemoveFolder Id="DesktopFolder" On="uninstall"/>
+		            <RegistryValue
+		                Root="HKCU"
+		                Key="Software/REFLEKT ONE Author"
+		                Name="installed"
+		                Type="integer"
+		                Value="1"
+		                KeyPath="yes"/>
+		        </Component>
+		    </Directory>
+		</Directory>
+    </Fragment>
+</Wix>

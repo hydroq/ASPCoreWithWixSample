@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messages>
+<msg id="attention">Atenţie</msg>
+<msg id="warning">Avertisment</msg>
+<msg id="note">Note</msg>
+<msg id="important">Important</msg>
+<msg id="lang">ROMÂNĂ</msg>
+<msg id="table">Planşă</msg>
+<msg id="page">pag. </msg>
+<msg id="see">see </msg>
+<msg id="doctype">Carte de folosire şi întreţinere</msg>
+<msg id="figure">Fig.</msg>
+<msg id="service">Serviciu</msg>
+<msg id="section">Secţiune</msg>
+<msg id="toc">Sumar</msg>
+</messages>

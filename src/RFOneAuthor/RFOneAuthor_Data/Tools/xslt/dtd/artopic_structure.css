@@ -1,0 +1,431 @@
+/* Created by XMetaL style generator. ©2006 Justsystems Canada Inc. All rights reserved.*/
+
+@sq-plus-minus;
+@sq-structure-view-icons;
+/*
+@sq-start-only-tags;
+*/
+
+* {
+	white-space: nowrap;
+	text-align: left;
+	margin-left: 20px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	font-family: "MS Shell Dlg";
+	font-style: normal;
+	font-size: 8pt;
+	font-weight: normal;
+}
+
+/* top-level elements */
+$DOCUMENT>* {
+	margin-left: 0px;
+}
+
+/* The following puts the element name beside each non-terminal node icon. */
+
+body:before {
+	content: 'body';
+	font-family: 'MS Shell Dlg';
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	color: #191970;
+}
+
+copyright:before {
+	content: 'copyright';
+	font-family: 'MS Shell Dlg';
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	color: #191970;
+}
+
+critdates:before {
+	content: 'critdates';
+	font-family: 'MS Shell Dlg';
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	color: #191970;
+}
+
+dl:before {
+	content: 'dl';
+	font-family: 'MS Shell Dlg';
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	color: #191970;
+}
+
+dlentry:before {
+	content: 'dlentry';
+	font-family: 'MS Shell Dlg';
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	color: #191970;
+}
+
+dlhead:before {
+	content: 'dlhead';
+	font-family: 'MS Shell Dlg';
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	color: #191970;
+}
+
+example:before {
+	content: 'example';
+	font-family: 'MS Shell Dlg';
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	color: #191970;
+}
+
+fig:before {
+	content: 'fig';
+	font-family: 'MS Shell Dlg';
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	color: #191970;
+}
+
+figgroup:before {
+	content: 'figgroup';
+	font-family: 'MS Shell Dlg';
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	color: #191970;
+}
+
+figure-2d:before {
+	content: 'figure-2d';
+	font-family: 'MS Shell Dlg';
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	color: #191970;
+}
+
+graphic-2d:before {
+	content: 'graphic-2d';
+	font-family: 'MS Shell Dlg';
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	color: #191970;
+}
+
+image:before {
+	content: 'image';
+	font-family: 'MS Shell Dlg';
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	color: #191970;
+}
+
+item-content:before {
+	content: 'item-content';
+	font-family: 'MS Shell Dlg';
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	color: #191970;
+}
+
+keywords:before {
+	content: 'keywords';
+	font-family: 'MS Shell Dlg';
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	color: #191970;
+}
+
+link:before {
+	content: 'link';
+	font-family: 'MS Shell Dlg';
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	color: #191970;
+}
+
+linklist:before {
+	content: 'linklist';
+	font-family: 'MS Shell Dlg';
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	color: #191970;
+}
+
+linkpool:before {
+	content: 'linkpool';
+	font-family: 'MS Shell Dlg';
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	color: #191970;
+}
+
+menuxref:before {
+	content: 'menuxref';
+	font-family: 'MS Shell Dlg';
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	color: #191970;
+}
+
+metadata:before {
+	content: 'metadata';
+	font-family: 'MS Shell Dlg';
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	color: #191970;
+}
+
+object:before {
+	content: 'object';
+	font-family: 'MS Shell Dlg';
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	color: #191970;
+}
+
+ol:before {
+	content: 'ol';
+	font-family: 'MS Shell Dlg';
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	color: #191970;
+}
+
+poi:before {
+	content: 'poi';
+	font-family: 'MS Shell Dlg';
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	color: #191970;
+}
+
+poi-3d-link:before {
+	content: 'poi-3d-link';
+	font-family: 'MS Shell Dlg';
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	color: #191970;
+}
+
+poi-links:before {
+	content: 'poi-links';
+	font-family: 'MS Shell Dlg';
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	color: #191970;
+}
+
+poibody:before {
+	content: 'poibody';
+	font-family: 'MS Shell Dlg';
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	color: #191970;
+}
+
+poimenu:before {
+	content: 'poimenu';
+	font-family: 'MS Shell Dlg';
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	color: #191970;
+}
+
+poimenuitem:before {
+	content: 'poimenuitem';
+	font-family: 'MS Shell Dlg';
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	color: #191970;
+}
+
+poitopic:before {
+	content: 'poitopic';
+	font-family: 'MS Shell Dlg';
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	color: #191970;
+}
+
+prodinfo:before {
+	content: 'prodinfo';
+	font-family: 'MS Shell Dlg';
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	color: #191970;
+}
+
+prolog:before {
+	content: 'prolog';
+	font-family: 'MS Shell Dlg';
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	color: #191970;
+}
+
+related-links:before {
+	content: 'related-links';
+	font-family: 'MS Shell Dlg';
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	color: #191970;
+}
+
+row:before {
+	content: 'row';
+	font-family: 'MS Shell Dlg';
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	color: #191970;
+}
+
+section:before {
+	content: 'section';
+	font-family: 'MS Shell Dlg';
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	color: #191970;
+}
+
+simpletable:before {
+	content: 'simpletable';
+	font-family: 'MS Shell Dlg';
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	color: #191970;
+}
+
+sl:before {
+	content: 'sl';
+	font-family: 'MS Shell Dlg';
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	color: #191970;
+}
+
+sthead:before {
+	content: 'sthead';
+	font-family: 'MS Shell Dlg';
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	color: #191970;
+}
+
+strow:before {
+	content: 'strow';
+	font-family: 'MS Shell Dlg';
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	color: #191970;
+}
+
+table:before {
+	content: 'table';
+	font-family: 'MS Shell Dlg';
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	color: #191970;
+}
+
+tbody:before {
+	content: 'tbody';
+	font-family: 'MS Shell Dlg';
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	color: #191970;
+}
+
+tgroup:before {
+	content: 'tgroup';
+	font-family: 'MS Shell Dlg';
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	color: #191970;
+}
+
+thead:before {
+	content: 'thead';
+	font-family: 'MS Shell Dlg';
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	color: #191970;
+}
+
+titlealts:before {
+	content: 'titlealts';
+	font-family: 'MS Shell Dlg';
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	color: #191970;
+}
+
+topic:before {
+	content: 'topic';
+	font-family: 'MS Shell Dlg';
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	color: #191970;
+}
+
+ul:before {
+	content: 'ul';
+	font-family: 'MS Shell Dlg';
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	color: #191970;
+}
+
+vrmlist:before {
+	content: 'vrmlist';
+	font-family: 'MS Shell Dlg';
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	color: #191970;
+}

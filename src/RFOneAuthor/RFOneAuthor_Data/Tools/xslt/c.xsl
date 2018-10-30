@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xsl:stylesheet [
+	<!ENTITY nbsp "&#160;">
+	<!ENTITY reg "&#174;">
+	<!ENTITY mdash "&#x2014;">
+]>
+<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:vf="http://xmlcompass.vftis.com/namespace/vfreuse"
+xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+exclude-result-prefixes="vf ditaarch">
+
+	<xsl:param name="user"></xsl:param>
+	<xsl:param name="server"></xsl:param>
+	<xsl:param name="server_host"></xsl:param>
+	<xsl:param name="curlang"></xsl:param>
+	<xsl:param name="id"></xsl:param>
+	<xsl:param name="ticket"></xsl:param>
+
+	
+	<!-- these two directories may need to be localized -->
+	<xsl:param name="icon_dir" select=" 'img/' "/>
+	<xsl:param name="image_dir" select=" 'img/' "/>
+	
+	<!-- CAP-763 Use new outputclass values for information & shopping links -->
+	<xsl:param name="iconRoute" select=" 'icon routing' "/>
+	<xsl:param name="iconShop" select=" 'icon shopping' "/>
+	<xsl:param name="iconManual" select=" 'icon manual' "/>
+	
+	<xsl:variable name="hex" select="'0123456789ABCDEF'"/>
+	<xsl:variable name="ascii"> !"#$%&amp;'()*+,-./0123456789:;&lt;=&gt;?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~</xsl:variable>
+	<!--<xsl:variable name="latin1"> ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ</xsl:variable>-->
+	
+	<xsl:variable name="stepInfoClass">StepInfo</xsl:variable>
+	<xsl:variable name="noteClass">NoteContent</xsl:variable>
+	<xsl:variable name="poiMenuItemClass">PoiMenuItemContent</xsl:variable>
+	<xsl:variable name="poiDescClass">PoiDescContent</xsl:variable>
+	<!-- this makes output directory names for any language -->
+
+	<!-- this corrects for known casing issues in curlang parameters-->
+	<xsl:variable name="language">
+		<xsl:choose>
+			<xsl:when test="contains($curlang, '_')">
+				<xsl:choose>
+					<xsl:when test="$curlang = 'en_us' ">en_US</xsl:when>
+					<xsl:when test="$curlang = 'en_uk' ">en_UK</xsl:when>
+					<xsl:when test="$curlang = 'zh_cn' ">zh_CN</xsl:when>
+					<xsl:when test="$curlang = 'zh_tw' ">zh_TW</xsl:when>
+					<xsl:when test="$curlang = 'it_it' ">it_IT</xsl:when>
+					<xsl:when test="$curlang = 'fr_ca' ">fr_CA</xsl:when>
+					<xsl:when test="$curlang = 'fr_fr' ">fr_FR</xsl:when>
+					<xsl:when test="$curlang = 'de_de' ">de_DE</xsl:when>
+					<xsl:when test="$curlang = 'es_es' ">es_ES</xsl:when>
+					<xsl:otherwise>
+						<xsl:value-of select="$curlang"/>
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:value-of select="$curlang"/>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:variable>
+	<!--xsl:strip-space elements="*"/-->
+	<xsl:include href="mod/cals2html.xsl"/>
+	<xsl:include href="lang/lang.xss"/>
+	
+	<xsl:output indent="yes" method="xml" omit-xml-declaration="no" encoding="UTF-8" cdata-section-elements="info"/>
+
+	<xsl:template match="topic">
+	    <topic>
+	      <xsl:apply-templates select="title"/>
+	      <xsl:apply-templates select="information|poitopic|animated-procedure"/>
+	    </topic>
+	</xsl:template>
+	
+	<!-- Transform the content of the info sections into HTML -->
+	<xsl:template match="info">
+	   <info>
+	   <xsl:apply-templates select="@*"/>
+	   <xsl:text disable-output-escaping="yes">&lt;![CDATA[</xsl:text>
+	      <div class="{$stepInfoClass}">
+		<xsl:apply-templates/>
+		<xsl:if test="following-sibling::substeps">
+		<!--<xsl:message>Found substeps after info </xsl:message>-->
+		   <ol>
+		   <xsl:for-each select="following-sibling::substeps/substep">
+			<li>
+			  <xsl:value-of select="cmd"/>
+			  <xsl:if test="info">
+			    <!-- <xsl:message>Found info in substeps</xsl:message>-->
+			     <xsl:apply-templates select="info/*"/>
+			  </xsl:if>
+			</li>
+		   </xsl:for-each>
+		   </ol>
+		</xsl:if>
+	      </div>
+	   <xsl:text disable-output-escaping="yes">]]&gt;</xsl:text>
+	   </info>
+	</xsl:template>
+	
+	
+	<xsl:template match="cmd">
+	   <!-- Remove phrase-level tags in cmd elmeent -->
+	   <cmd><xsl:value-of select="."/></cmd>
+	</xsl:template>
+	
+	<!-- Transform the content of the context sections into HTML -->
+	<xsl:template match="context">
+	   <context>
+	   <xsl:text disable-output-escaping="yes">&lt;![CDATA[</xsl:text>
+	      <div class="ContextContent">
+		<xsl:apply-templates/>
+	      </div>
+	   <xsl:text disable-output-escaping="yes">]]&gt;</xsl:text>
+	   </context>
+	</xsl:template>
+	
+	
+	<!-- DITA definition list entry; Just write term & def to HTML without the wrapper -->
+	<xsl:template match="dlentry">
+		<xsl:apply-templates/>
+	</xsl:template>
+	
+	<xsl:template match="step">
+	    <step id="{@id}">
+		<xsl:apply-templates/>
+	    </step>
+	</xsl:template>
+	
+	<!-- Subseteps in an animated-procedure are handled in the info template -->
+	<xsl:template match="substeps"/>
+	
+	<xsl:template match="@class"/>
+	<xsl:template match="@vf:*"/>
+	
+	<!-- copy everything else as is -->
+	<xsl:template match="*">
+		<xsl:element name="{local-name()}">
+			<xsl:apply-templates select="node()|@*"/>
+		</xsl:element>
+	</xsl:template>
+	
+	<xsl:template match="@*">
+		<xsl:copy/>
+	</xsl:template>
+	
+	<!--
+	<xsl:template match="node()|@*">
+		<xsl:copy>
+			<xsl:apply-templates select="node()|@*"/>
+		</xsl:copy>
+	</xsl:template>
+	-->
+	<xsl:template match="xref">
+		<xsl:variable name="target" select="@href"/>
+		<a href="#{@href}">
+		  <xsl:if test="ancestor::info/following-sibling::info[@id=$target]">
+		     <xsl:attribute name="class" select="'sidebox'"/>
+		  </xsl:if>
+		   <xsl:apply-templates/>
+		</a>
+	</xsl:template>
+	
+	<!-- href on extxref should be Topic Code -->
+	<xsl:template match="extxref">
+		<a href="{concat($server_host, '/documentRef?type=WSM&amp;topicCode=', @href)}">
+		   <xsl:apply-templates/>
+		</a>
+	</xsl:template>
+	
+	<xsl:template match="extxref[parent::poimenuitem]">
+	   <item-content>
+		<a href="{concat($server_host, '/documentRef?type=WSM&amp;topicCode=', @href)}">
+		   <xsl:apply-templates/>
+		</a>
+	   </item-content>
+	</xsl:template>
+	
+	<xsl:template match="media-3d|media-3d-poi">
+	   <xsl:variable name="resourceRef">
+		 <xsl:call-template name="getMedia3dHref">
+			<xsl:with-param name="media3d" select="."/>
+		 </xsl:call-template>
+	   </xsl:variable>
+	   <xsl:element name="{local-name()}">
+		<xsl:attribute name="href">
+			<xsl:value-of select="concat('res://', $resourceRef)"/>
+		</xsl:attribute>
+	   </xsl:element>
+	</xsl:template>
+	
+	<xsl:template match="tracking-config|tracking-config-poi">
+		<xsl:element name="{local-name()}">
+		    <xsl:attribute name="href">
+		           <xsl:value-of select="concat('res://', @href)"/>
+		    </xsl:attribute>
+		</xsl:element>
+	</xsl:template>
+	
+	<xsl:template match="poi-positions">
+		<poi-positions>
+		    <xsl:attribute name="href">
+		           <xsl:value-of select="concat('res://', @href)"/>
+		    </xsl:attribute>
+		</poi-positions>
+	</xsl:template>
+	
+	<xsl:template name="getMedia3dHref">
+	  <xsl:param name="media3d"/>
+	     <xsl:choose>
+	     <xsl:when test="@docname != ''">
+	       <xsl:value-of select="concat($media3d/@docname, '.x3d')"/>
+	     </xsl:when>
+	     <xsl:otherwise>
+		<xsl:value-of select="$media3d/@href"/>
+	     </xsl:otherwise>
+	   </xsl:choose>
+	</xsl:template>
+
+	
+	<xsl:template match="fig | figure-2d">
+		<div class="Figure">
+			<center>
+				<xsl:apply-templates/>
+			</center>
+		</div>
+	</xsl:template>
+	
+	<xsl:template match="caption">
+		<xsl:apply-templates/>
+	</xsl:template>
+	
+	<xsl:template match="note[not(ancestor::info) and not(ancestor::item-content) and not(ancestor::context)]">
+	  <note type="{@type}">
+	    <xsl:text disable-output-escaping="yes">&lt;![CDATA[</xsl:text>
+	    <div class="{$noteClass}">
+		<xsl:apply-templates/>
+	    </div>
+	    <xsl:text disable-output-escaping="yes">]]&gt;</xsl:text>
+	  </note>
+	</xsl:template>
+	
+	<xsl:template match="note[ancestor::info or ancestor::item-content or ancestor::context]">
+	    <div class="{$noteClass}">
+		<xsl:apply-templates/>
+	    </div>
+	</xsl:template>
+	
+	<xsl:template match="item-content">
+	  <item-content>
+	    <xsl:text disable-output-escaping="yes">&lt;![CDATA[</xsl:text>
+	    <div class="{$poiMenuItemClass}">
+		<xsl:apply-templates/>
+	    </div>
+	    <xsl:text disable-output-escaping="yes">]]&gt;</xsl:text>
+	    </item-content>
+	</xsl:template>
+	
+	<xsl:template match="poidesc">
+	  <poidesc>
+	    <xsl:text disable-output-escaping="yes">&lt;![CDATA[</xsl:text>
+	    <div class="{$poiDescClass}">
+	        <xsl:choose>
+		  <xsl:when test="not(child::*)">
+		    <!-- if no block content in poidesc -->
+		    <p><xsl:apply-templates/></p>
+		  </xsl:when>
+		  <xsl:otherwise>
+		    <xsl:apply-templates/>
+		  </xsl:otherwise>
+		</xsl:choose>
+	    </div>
+	    <xsl:text disable-output-escaping="yes">]]&gt;</xsl:text>
+	    </poidesc>
+	</xsl:template>
+	
+	<xsl:template match="keyword[@outputclass='informationLink' or @outputclass=$iconManual]" priority="1">
+	 <a  class="{$iconManual}">
+			<xsl:attribute name="href">
+			   <xsl:call-template name="makeResourceUrl">
+			      <xsl:with-param name="resourceRef" select="."/>
+			   </xsl:call-template>
+			</xsl:attribute>
+		<xsl:text>Show instructions</xsl:text>
+		</a>
+	</xsl:template>
+	
+
+	<!-- Hard coded link to e-commerce site -->
+	<xsl:template match="keyword[@outputclass='shopLink' or @outputclass=$iconShop]" priority="1">
+	    <a href="https://jlrequipment.service-solutions.com/en-GB/Pages/ItemDetail.aspx?itemID=69363" class="{$iconShop}">
+			<xsl:apply-templates/>
+		</a>
+	</xsl:template>
+	
+	<xsl:template match="id-link" >
+		<a href="{@href}" class="{$iconRoute}">
+			<xsl:apply-templates/>
+		</a>
+	</xsl:template>
+
+	<xsl:template match="shop-link" >
+		<a href="{@href}" class="{$iconShop}">
+			<xsl:apply-templates/>
+		</a>
+	</xsl:template>
+	
+	<xsl:template match="manual-link" >
+		<a class="{$iconManual}">
+			<xsl:attribute name="href">
+			   <xsl:call-template name="makeResourceUrl">
+			      <xsl:with-param name="resourceRef" select="@href"/>
+			   </xsl:call-template>
+			</xsl:attribute>
+			<xsl:apply-templates/>
+		</a>
+	</xsl:template>
+	
+	<!-- Handle some other outputclass -->
+	<xsl:template match="keyword[@outputclass!='']">
+	    <a href="#" class="{@outputclass}">
+			<xsl:apply-templates/>
+		</a>
+	</xsl:template>
+	
+
+	<!-- Special handling for MP4 video -->
+	<xsl:template match="image[contains(@href, '.mp4')]">
+		<video controls="true">
+			<xsl:attribute name="src">
+			   <xsl:call-template name="makeResourceUrl">
+			      <xsl:with-param name="resourceRef" select="@href"/>
+			   </xsl:call-template>
+			</xsl:attribute>
+		</video>
+	</xsl:template>
+	
+	<!-- New video tag, assuming href has .mp4 extension -->
+	<xsl:template match="video">
+		<video controls="true">
+		  <source type="video/mp4">
+			<xsl:attribute name="src">
+			   <xsl:call-template name="makeResourceUrl">
+			      <xsl:with-param name="resourceRef" select="@href"/>
+			   </xsl:call-template>
+			</xsl:attribute>
+		  </source>
+		  <source type="video/ogg">
+			<xsl:attribute name="src">
+			   <xsl:call-template name="makeResourceUrl">
+			      <xsl:with-param name="resourceRef" select="concat(substring-before(@href, '.mp4'), '.ogg')"/>
+			   </xsl:call-template>
+			</xsl:attribute>
+		  </source>
+		</video>
+	</xsl:template>
+	
+	<xsl:template match="image">
+		<img class="Default">
+			<xsl:attribute name="src">
+			   <xsl:call-template name="makeResourceUrl">
+			      <xsl:with-param name="resourceRef" select="@href"/>
+			   </xsl:call-template>
+			</xsl:attribute>
+		</img>
+	</xsl:template>
+	<xsl:template match="simpletable">
+		<table border="1" cellspacing="0" cellpadding="0">
+			<xsl:apply-templates/>
+		</table>
+	</xsl:template>
+	<xsl:template match="sthead">
+		<xsl:for-each select="stentry">
+			<th>
+				<xsl:apply-templates/>
+			</th>
+		</xsl:for-each>
+	</xsl:template>
+	<xsl:template match="strow">
+		<tr style="vertical-align: baseline;">
+			<xsl:for-each select="stentry">
+				<td>
+					<div class="Trattino_inner">
+						<xsl:apply-templates/>
+					</div>
+				</td>
+			</xsl:for-each>
+		</tr>
+	</xsl:template>
+
+	<xsl:template match="processing-instruction()" priority="1"/>
+
+	<xsl:template name="makeResourceUrl">
+	   <xsl:param name="resourceRef"/>
+	   <xsl:variable name="serverUrl">
+		<xsl:call-template name="decodeUrl">
+			<xsl:with-param name="encoded" select="$server_host"/>
+		</xsl:call-template>
+	   </xsl:variable>
+	   <xsl:value-of select="concat($serverUrl, '/document?id=', $id, '&amp;image=', $resourceRef, '&amp;ticket=', $ticket)"/>
+	</xsl:template>
+	
+	<xsl:template name="decodeUrl">
+	   <xsl:param name="encoded"/>
+	    <xsl:choose>
+      <xsl:when test="contains($encoded,'%')">
+        <xsl:value-of select="substring-before($encoded,'%')"/>
+        <xsl:variable name="hexpair" select="translate(substring(substring-after($encoded,'%'),1,2),'abcdef','ABCDEF')"/>
+        <xsl:variable name="decimal" select="(string-length(substring-before($hex,substring($hexpair,1,1))))*16 + string-length(substring-before($hex,substring($hexpair,2,1)))"/>
+        <xsl:choose>
+          <xsl:when test="$decimal &lt; 127 and $decimal &gt; 31">
+            <xsl:value-of select="substring($ascii,$decimal - 31,1)"/>
+          </xsl:when>
+          <!--<xsl:when test="$decimal &gt; 159">
+            <xsl:value-of select="substring($latin1,$decimal - 159,1)"/>
+          </xsl:when>-->
+          <xsl:otherwise>?</xsl:otherwise>
+        </xsl:choose>
+        <xsl:call-template name="decodeUrl">
+          <xsl:with-param name="encoded" select="substring(substring-after($encoded,'%'),3)"/>
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:value-of select="$encoded"/>
+      </xsl:otherwise>
+    </xsl:choose>
+	</xsl:template>
+
+	<xsl:template match="@outputclass">
+		<xsl:attribute name="class">
+			<xsl:value-of select="."/>
+		</xsl:attribute>
+	</xsl:template>
+
+</xsl:stylesheet>

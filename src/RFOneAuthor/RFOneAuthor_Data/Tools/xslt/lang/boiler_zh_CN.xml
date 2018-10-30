@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messages>
+<msg id="attention">注意</msg>
+<msg id="warning">警告</msg>
+<msg id="note">备注</msg>
+<msg id="important">重要事项</msg>
+	<msg id="lang">中国简体中文</msg>
+<msg id="table">表</msg>
+<msg id="page">第　页</msg>
+<msg id="see">参阅 </msg>
+<msg id="doctype">使用和维护手册</msg>
+<msg id="figure">图</msg>
+<msg id="service">服务</msg>
+<msg id="section">部分</msg>
+<msg id="toc">目录</msg>
+</messages>

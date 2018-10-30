@@ -1,0 +1,73 @@
+﻿@model object
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Viewer</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <div class="popup" id="login-popup">
+        <div class="popup-head">Log in</div>
+        <div class="popup-container">
+            <form>
+                <input type="text" placeholder="Login" name="user" class="search field" required id="login">
+                <input type="password" placeholder="Password" name="password" class="search field" required id="password">
+                <input type="submit" class="button round def-green margin field login" value="log in">
+            </form>
+        </div>
+    </div>
+    <header>
+        <div class="search-container">
+            <img src="/images/logo.png" class="logo">
+            <input type="text" class="search margin" placeholder="Search" id="search">
+        </div>
+        <div class="login-container" id="login-container">
+            <div class="flex-row">
+                <div class="username-container flex-row">
+                    <b>Welcome</b>,
+                    <img src="/images/user.svg" class="user-icon icon">
+                    <span id="username">
+                        <!-- Dynamic content -->
+                    </span>
+                </div>
+                <div class="logout-container flex-row" id="logout">
+                    <span id="username">Log Out</span>
+                    <img src="/images/logout.svg" class="logout-icon icon">
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="content-container">
+        <aside class="aside-container" id="resizer">
+            <!-- Dynamic content -->
+        </aside>
+
+        <div class="content" id="resizable">
+
+            <div id="loader" class="loading"></div>
+
+            <div class="head-container">
+                <div class="head-row">
+                    <h2 class="heading">
+                        <!-- Dynamic content -->
+                    </h2>
+                    <a href="#" id="draft-btn" class="button round margin outline draft uri-btn hidden">draft ►</a>
+                    <a href="#" id="start-btn" class="button round margin outline start uri-btn hidden">start ►</a>
+                </div>
+            </div>
+            <div class="description-container">
+                <span class="description">
+                    <!-- Dynamic content -->
+                </span>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/js/main.js"></script>
+</html>

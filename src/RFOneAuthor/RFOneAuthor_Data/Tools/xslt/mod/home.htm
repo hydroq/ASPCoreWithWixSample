@@ -1,0 +1,39 @@
+<html>
+<script>
+	var		s = new String(window.location);
+	var		i = s.indexOf("?p=");
+	var		html_string = "";
+	var		pag_link = "FIRSTPAGE.HTM";
+	var		idx_link = "indice.html";
+	
+	if(i != -1) {
+		pag_link = s.substr(i + 4, s.length);
+	}
+		
+	html_string += "<head>\n";
+	html_string += "<meta http-equiv='content-type' content='text/html;charset=iso-8859-1'>\n";
+	html_string += "<title>Home</title>\n";
+	html_string += "</head>\n";
+		
+	html_string += "<frameset rows='*' cols='197,*' frameborder='NO' border='0' framespacing='0' noresize>\n";
+	html_string += "<frameset rows='99,*' cols='*' framespacing='0' frameborder='NO' border='0'noresize>\n";
+	html_string += "<frame src='logo.htm' name='leftFrame' scrolling='no' noresize>\n";
+	html_string += "<frame src='indice.html' name='menu' scrolling='auto' noresize>\n";
+	html_string += "</frameset>\n";
+	html_string += "<frameset rows='41,*' cols='*' framespacing='0' frameborder='NO' border='0'>\n";
+	html_string += "<frame src='head.html' name='top' scrolling='no' noresize>\n";
+	html_string += "<frame name='main' scrolling='auto' src='" + pag_link + "'>\n";
+	html_string += "</frameset>\n";
+/*	html_string += "<noframes>\n";
+
+	html_string += "<body bgcolor='#ffffff'>\n";
+	html_string += "<p></p>\n";
+	html_string += "</body>\n";
+
+	html_string += "</noframes>\n";*/
+	html_string += "</frameset>\n";
+	
+	document.write(html_string);
+</script>
+
+</html>

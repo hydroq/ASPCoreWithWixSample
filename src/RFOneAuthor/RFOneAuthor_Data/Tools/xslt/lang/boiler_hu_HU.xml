@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messages>
+<msg id="attention">Figyelem</msg>
+<msg id="warning">Figyelmeztetés</msg>
+<msg id="note">Megjegyzés</msg>
+<msg id="important">Fontos</msg>
+	<msg id="lang">Magyar</msg>
+<msg id="table">Táblázat</msg>
+<msg id="page">Oldal. </msg>
+<msg id="see">lásd </msg>
+<msg id="doctype">Használati és karbantartási útmutató</msg>
+<msg id="figure">Ábra</msg>
+<msg id="service">Szerviz</msg>
+<msg id="section">Rész</msg>
+<msg id="toc">Tartalomjegyzék</msg>
+</messages>

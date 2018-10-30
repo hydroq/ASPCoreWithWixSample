@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messages>
+<msg id="attention">Huomio</msg>
+<msg id="warning">Varoitus</msg>
+<msg id="note">Huomaa</msg>
+<msg id="important">Tärkeää</msg>
+	<msg id="lang">Suomi</msg>
+<msg id="table">Taso</msg>
+<msg id="page">sivu </msg>
+<msg id="see">katso </msg>
+<msg id="doctype">Käyttö- ja huolto-ohje</msg>
+<msg id="figure">Kuva</msg>
+<msg id="service">Palvelu</msg>
+<msg id="section">Osio</msg>
+<msg id="toc">Yhteenveto</msg>
+</messages>

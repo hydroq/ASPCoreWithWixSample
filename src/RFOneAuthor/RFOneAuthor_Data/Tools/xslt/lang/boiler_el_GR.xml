@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messages>
+	<msg id="lang">ελληνικά</msg>
+<msg id="attention">Προσοχή</msg>
+<msg id="warning">Προειδοποίηση</msg>
+<msg id="note">Σημειώσεις</msg>
+<msg id="important">Σημαντικό</msg>
+<msg id="table">Πίνακας</msg>
+<msg id="page">σελ. </msg>
+<msg id="see">βλ.</msg>
+<msg id="doctype">Βιβλιαράκι χρήσης και συντήρησης</msg>
+<msg id="figure">Εικ.</msg>
+<msg id="service">Υπηρεσία</msg>
+<msg id="section">Ενότητα</msg>
+<msg id="toc">Περιεχόμενα</msg>
+</messages>

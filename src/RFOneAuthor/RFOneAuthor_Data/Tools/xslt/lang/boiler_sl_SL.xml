@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messages>
+<msg id="attention">Pozor</msg>
+<msg id="warning">Opozorilo</msg>
+<msg id="note">Opombe</msg>
+<msg id="important">Pomembno</msg>
+<msg id="lang">Slovenski</msg>
+<msg id="table">Preglednica</msg>
+<msg id="page">stran </msg>
+<msg id="see">glejte </msg>
+<msg id="doctype">Knjižica za uporabo in vzdrževanje</msg>
+<msg id="figure">Slika</msg>
+<msg id="service">Storitev</msg>
+<msg id="section">Odsek</msg>
+<msg id="toc">Vsebina</msg>
+</messages>

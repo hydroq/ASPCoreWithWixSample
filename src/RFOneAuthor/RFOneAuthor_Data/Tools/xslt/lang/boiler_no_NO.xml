@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messages>
+<msg id="attention">Advarsel</msg>
+<msg id="warning">Varsel</msg>
+<msg id="note">Merknad</msg>
+<msg id="important">Viktig</msg>
+<msg id="lang">Norsk</msg>
+<msg id="table">Tabell</msg>
+<msg id="page">side. </msg>
+<msg id="see">se</msg>
+<msg id="doctype">Håndbok for bruk og vedlikehold</msg>
+<msg id="figure">Fig.</msg>
+<msg id="service">Tjeneste</msg>
+<msg id="section">Seksjon</msg>
+<msg id="toc">Innholdsfortegnelse</msg>
+</messages>

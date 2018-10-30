@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messages>
+<msg id="attention">Uwaga</msg>
+<msg id="warning">Pouczenie</msg>
+<msg id="note">Adnotacje</msg>
+<msg id="important">Ważne</msg>
+<msg id="lang">Polski</msg>
+<msg id="table">Tablica</msg>
+<msg id="page">str. </msg>
+<msg id="see">patrz</msg>
+<msg id="doctype">Podręcznik obsługi i konserwacji</msg>
+<msg id="figure">Rys.</msg>
+<msg id="service">Serwis</msg>
+<msg id="section">Sekcja</msg>
+<msg id="toc">Spis treści</msg>
+</messages>

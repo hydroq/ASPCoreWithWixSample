@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messages>
+<msg id="attention">OBS</msg>
+<msg id="warning">Varning</msg>
+<msg id="note">Anmärkningar</msg>
+<msg id="important">Viktigt</msg>
+	<msg id="lang">Svenska</msg>
+<msg id="table">Tabell</msg>
+<msg id="page">sid. </msg>
+<msg id="see">se </msg>
+<msg id="doctype">Drift- och underhållshandbok</msg>
+<msg id="figure">Fig</msg>
+<msg id="service">Tjänst</msg>
+<msg id="section">Sektion</msg>
+<msg id="toc">Innehållsförteckning</msg>
+</messages>

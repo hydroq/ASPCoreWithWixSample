@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messages>
+	<msg id="attention">Giv agt</msg>
+	<msg id="warning">Advarsel</msg>
+	<msg id="note">Bemærk</msg>
+	<msg id="important">Vigtigt</msg>
+	<msg id="lang">Dansk</msg>
+	<msg id="table">Tavle</msg>
+	<msg id="page">side </msg>
+	<msg id="see">jfr.</msg>
+	<msg id="doctype">Vedligeholdelses- og brugermanual</msg>
+	<msg id="figure">Fig</msg>
+	<msg id="service">Service</msg>
+	<msg id="section">Afsnit</msg>
+	<msg id="toc">Indholdsfortegnelse</msg>
+</messages>

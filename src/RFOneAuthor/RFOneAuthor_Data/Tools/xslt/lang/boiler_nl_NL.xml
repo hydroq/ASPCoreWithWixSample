@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messages>
+<msg id="attention">Let op</msg>
+<msg id="warning">Waarschuwing</msg>
+<msg id="note">Opmerkingen</msg>
+<msg id="important">Belangrijk</msg>
+<msg id="lang">Nederlands</msg>
+<msg id="table">Tabel</msg>
+<msg id="page">pag. </msg>
+<msg id="see">see </msg>
+<msg id="doctype">Onderhouds- en gebruiksaanwijzingen</msg>
+<msg id="figure">Fig</msg>
+<msg id="service">Service</msg>
+<msg id="section">Deel</msg>
+<msg id="toc">Inhoud</msg>
+</messages>

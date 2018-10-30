@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messages>
+<p id="note.title">NOTE: </p>
+<p id="toc.title">Table of Contents</p>
+<p id="contents.title">Contents</p>
+<p id="caution.title">CAUTION: </p>
+<p id="important.title">IMPORTANT: </p>
+<p id="tip.title">TIP: </p>
+<p id="fastpath.title">FASTPATH: </p>
+<p id="attention.title">ATTENTION: </p>
+<p id="restriction.title">RESTRICTION: </p>
+<p id="remember.title">REMEMBER: </p>
+<p id="danger.title">DANGER: </p>
+<p id="warning.title">WARNING: </p>
+
+<!-- Gentext text -->
+<p id="section.txt">Section</p>
+<p id="choiceoptionhd.txt">Options</p>
+<p id="choicedeschd.txt">Description</p>
+<p id="figure.txt">Figure</p>
+<p id="table.txt">Table</p>
+<p id="callout.txt">Callout</p>
+<p id="partnumber.txt">Part Number</p>
+<p id="partname.txt">Part Name</p>
+<p id="description.txt">Description</p>
+<p id="kitnumber.txt">Kit Number</p>
+<p id="quantity.txt">Quantity</p>
+
+<!-- Months -->
+<p id="january">January</p>
+<p id="february">February</p>
+<p id="march">March</p>
+<p id="april">April</p>
+<p id="may">May</p>
+<p id="june">June</p>
+<p id="july">July</p>
+<p id="august">August</p>
+<p id="september">September</p>
+<p id="october">October</p>
+<p id="november">November</p>
+<p id="december">December</p>
+
+</messages>

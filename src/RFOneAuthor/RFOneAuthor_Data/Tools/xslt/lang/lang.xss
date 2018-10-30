@@ -1,0 +1,226 @@
+<?xml version="1.0"?>
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0" xmlns:fo="http://www.w3.org/1999/XSL/Format">
+<!-- Version 20120711 -->
+<!-- This stylesheet does the heavy lifting to look up the translation terms in the "boiler_{$curlang}.xml" files. -->
+<!-- The curlang parameter is set by the calling stylesheet by getting the value in the componentMetadata//language element -->
+
+<xsl:template name="getLangText">
+<xsl:param name="msgid"/>
+<xsl:value-of select="document(concat('boiler_', $curlang, '.xml'))/messages/p[@id = $msgid]"/>
+</xsl:template>
+
+<!-- Titles -->
+
+<xsl:param name="note.title">
+<xsl:call-template name="getLangText">
+<xsl:with-param name="msgid">note.title</xsl:with-param>
+</xsl:call-template>
+</xsl:param>
+
+<xsl:param name="toc.title">
+<xsl:call-template name="getLangText">
+<xsl:with-param name="msgid">toc.title</xsl:with-param>
+</xsl:call-template>
+</xsl:param>
+
+<xsl:param name="contents.title">
+<xsl:call-template name="getLangText">
+<xsl:with-param name="msgid">contents.title</xsl:with-param>
+</xsl:call-template>
+</xsl:param>
+
+<xsl:param name="caution.title">
+<xsl:call-template name="getLangText">
+<xsl:with-param name="msgid">caution.title</xsl:with-param>
+</xsl:call-template>
+</xsl:param>
+
+<xsl:param name="important.title">
+<xsl:call-template name="getLangText">
+<xsl:with-param name="msgid">important.title</xsl:with-param>
+</xsl:call-template>
+</xsl:param>
+
+<xsl:param name="tip.title">
+<xsl:call-template name="getLangText">
+<xsl:with-param name="msgid">tip.title</xsl:with-param>
+</xsl:call-template>
+</xsl:param>
+
+<xsl:param name="fastpath.title">
+<xsl:call-template name="getLangText">
+<xsl:with-param name="msgid">fastpath.title</xsl:with-param>
+</xsl:call-template>
+</xsl:param>
+
+<xsl:param name="attention.title">
+<xsl:call-template name="getLangText">
+<xsl:with-param name="msgid">attention.title</xsl:with-param>
+</xsl:call-template>
+</xsl:param>
+
+<xsl:param name="restriction.title">
+<xsl:call-template name="getLangText">
+<xsl:with-param name="msgid">restriction.title</xsl:with-param>
+</xsl:call-template>
+</xsl:param>
+
+<xsl:param name="remember.title">
+<xsl:call-template name="getLangText">
+<xsl:with-param name="msgid">remember.title</xsl:with-param>
+</xsl:call-template>
+</xsl:param>
+
+<xsl:param name="danger.title">
+<xsl:call-template name="getLangText">
+<xsl:with-param name="msgid">danger.title</xsl:with-param>
+</xsl:call-template>
+</xsl:param>
+
+<xsl:param name="warning.title">
+<xsl:call-template name="getLangText">
+<xsl:with-param name="msgid">warning.title</xsl:with-param>
+</xsl:call-template>
+</xsl:param>
+
+<xsl:param name="section.txt">
+<xsl:call-template name="getLangText">
+<xsl:with-param name="msgid">section.txt</xsl:with-param>
+</xsl:call-template>
+</xsl:param>
+
+<xsl:param name="choiceoptionhd.txt">
+<xsl:call-template name="getLangText">
+<xsl:with-param name="msgid">choiceoptionhd.txt</xsl:with-param>
+</xsl:call-template>
+</xsl:param>
+
+<xsl:param name="choicedeschd.txt">
+<xsl:call-template name="getLangText">
+<xsl:with-param name="msgid">choicedeschd.txt</xsl:with-param>
+</xsl:call-template>
+</xsl:param>
+
+<xsl:param name="figure.txt">
+<xsl:call-template name="getLangText">
+<xsl:with-param name="msgid">figure.txt</xsl:with-param>
+</xsl:call-template>
+</xsl:param>
+
+<xsl:param name="table.txt">
+<xsl:call-template name="getLangText">
+<xsl:with-param name="msgid">table.txt</xsl:with-param>
+</xsl:call-template>
+</xsl:param>
+
+<xsl:param name="callout.txt">
+<xsl:call-template name="getLangText">
+<xsl:with-param name="msgid">callout.txt</xsl:with-param>
+</xsl:call-template>
+</xsl:param>
+
+<xsl:param name="partnumber.txt">
+<xsl:call-template name="getLangText">
+<xsl:with-param name="msgid">partnumber.txt</xsl:with-param>
+</xsl:call-template>
+</xsl:param>
+
+<xsl:param name="partname.txt">
+<xsl:call-template name="getLangText">
+<xsl:with-param name="msgid">partname.txt</xsl:with-param>
+</xsl:call-template>
+</xsl:param>
+
+<xsl:param name="description.txt">
+<xsl:call-template name="getLangText">
+<xsl:with-param name="msgid">description.txt</xsl:with-param>
+</xsl:call-template>
+</xsl:param>
+
+<xsl:param name="kitnumber.txt">
+<xsl:call-template name="getLangText">
+<xsl:with-param name="msgid">kitnumber.txt</xsl:with-param>
+</xsl:call-template>
+</xsl:param>
+
+<xsl:param name="quantity.txt">
+<xsl:call-template name="getLangText">
+<xsl:with-param name="msgid">quantity.txt</xsl:with-param>
+</xsl:call-template>
+</xsl:param>
+
+<!-- Months -->
+
+<xsl:param name="january">
+<xsl:call-template name="getLangText">
+<xsl:with-param name="msgid">january</xsl:with-param>
+</xsl:call-template>
+</xsl:param>
+
+<xsl:param name="february">
+<xsl:call-template name="getLangText">
+<xsl:with-param name="msgid">february</xsl:with-param>
+</xsl:call-template>
+</xsl:param>
+
+<xsl:param name="march">
+<xsl:call-template name="getLangText">
+<xsl:with-param name="msgid">march</xsl:with-param>
+</xsl:call-template>
+</xsl:param>
+
+<xsl:param name="april">
+<xsl:call-template name="getLangText">
+<xsl:with-param name="msgid">april</xsl:with-param>
+</xsl:call-template>
+</xsl:param>
+
+<xsl:param name="may">
+<xsl:call-template name="getLangText">
+<xsl:with-param name="msgid">may</xsl:with-param>
+</xsl:call-template>
+</xsl:param>
+
+<xsl:param name="june">
+<xsl:call-template name="getLangText">
+<xsl:with-param name="msgid">june</xsl:with-param>
+</xsl:call-template>
+</xsl:param>
+
+<xsl:param name="july">
+<xsl:call-template name="getLangText">
+<xsl:with-param name="msgid">july</xsl:with-param>
+</xsl:call-template>
+</xsl:param>
+
+<xsl:param name="august">
+<xsl:call-template name="getLangText">
+<xsl:with-param name="msgid">august</xsl:with-param>
+</xsl:call-template>
+</xsl:param>
+
+<xsl:param name="september">
+<xsl:call-template name="getLangText">
+<xsl:with-param name="msgid">september</xsl:with-param>
+</xsl:call-template>
+</xsl:param>
+
+<xsl:param name="october">
+<xsl:call-template name="getLangText">
+<xsl:with-param name="msgid">october</xsl:with-param>
+</xsl:call-template>
+</xsl:param>
+
+<xsl:param name="november">
+<xsl:call-template name="getLangText">
+<xsl:with-param name="msgid">november</xsl:with-param>
+</xsl:call-template>
+</xsl:param>
+
+<xsl:param name="december">
+<xsl:call-template name="getLangText">
+<xsl:with-param name="msgid">december</xsl:with-param>
+</xsl:call-template>
+</xsl:param>
+
+</xsl:stylesheet>

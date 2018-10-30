@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messages>
+	<msg id="attention">경고</msg>
+<msg id="warning">경고</msg>
+<msg id="note">참고</msg>
+<msg id="important">중요</msg>
+	<msg id="lang">사용자 설명서</msg>
+<msg id="table">표</msg>
+<msg id="page">페이지 </msg>
+<msg id="see">보기 </msg>
+<msg id="doctype">사용자 설명서</msg>
+<msg id="figure">그림</msg>
+<msg id="service">서비스</msg>
+<msg id="section">섹션</msg>
+<msg id="toc">목차</msg>
+</messages>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messages>
+	<msg id="attention">คำเตือน</msg>
+<msg id="warning">คำเตือน</msg>
+<msg id="note">หมายเหตุ</msg>
+<msg id="important">สิ่งสำคัญ</msg>
+	<msg id="lang">ประเทศไทย</msg>
+<msg id="table">ตาราง</msg>
+<msg id="page">หน้า  </msg>
+<msg id="see">ดู </msg>
+<msg id="doctype">คู่มือสำหรับเจ้าของรถ</msg>
+<msg id="figure">ภาพ</msg>
+<msg id="service">บริการ</msg>
+<msg id="section">หัวข้อ</msg>
+<msg id="toc">สารบัญ</msg>
+</messages>

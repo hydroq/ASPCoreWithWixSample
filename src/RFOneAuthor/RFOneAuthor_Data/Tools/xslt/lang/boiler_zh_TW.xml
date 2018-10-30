@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messages>
+	<msg id="attention">警告</msg>
+<msg id="warning">警告</msg>
+<msg id="note">備註</msg>
+<msg id="important">註意事項</msg>
+	<msg id="lang">Cinese Tradizionale</msg>
+<msg id="table">表格</msg>
+<msg id="page">頁 </msg>
+<msg id="see">參閱 </msg>
+<msg id="doctype">車主手冊</msg>
+<msg id="figure">圖</msg>
+<msg id="service">服務</msg>
+<msg id="section">部分</msg>
+<msg id="toc">資料目錄</msg>
+</messages>

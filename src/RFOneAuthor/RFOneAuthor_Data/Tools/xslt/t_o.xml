@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic>
+   <title>Bühler Test Scenario f2</title>
+   <information id="r54311daa-6471-4634-a5e6-e4fa442d73ca">
+	     <title id="CAP0e6ba25c-a8a1-45fb-a957-be007075f70a7">Info test</title>
+	     <infobody>
+		       <infobox>
+			         <title id="CAP0e6ba25c-a8a1-45fb-a957-37b0deb2e50e1">Test information</title>
+			         <note type=""><![CDATA[<div class="NoteContent">Test contents with imag<img class="Default" src="/document?id=&amp;image=img102.jpg&amp;ticket="/>e</div>]]></note>
+		       </infobox>
+	     </infobody>
+   </information>
+   <poitopic id="r54311daa-6471-4634-a5e6-49c58438b6f3">
+	     <title id="CAP0e6ba25c-a8a1-45fb-a957-fe09c0ce869a8">test pois</title>
+	     <poibody>
+		       <poi id="CAP9998d1d5-771b-42d9-b979-4592a8b83b2c2">
+			         <title id="CAP0e6ba25c-a8a1-45fb-a957-ad682db5881c9">poi 1f</title>
+			         <poi-3d-link id="PM005300_1">
+               <param name="PNR" value="PM005300_1"/>
+            </poi-3d-link>
+         </poi>
+	     </poibody>
+	     <poi-links>
+         <media-3d-poi href="res://res://test_pois3103.x3d"/>
+         <tracking-config-poi href="res://res://RF_Tracking_S10.zip"/>
+
+	     </poi-links>
+   </poitopic>
+   <animated-procedure id="r54311daa-6471-4634-a5e6-48d837dea8b9">
+	     <title id="CAP0e6ba25c-a8a1-45fb-a957-4431e6fd9a93b" class="test">Animated procedure test</title>
+	     <taskbody>
+		       <context><![CDATA[<div class="ContextContent">ani test</div>]]></context>
+		       <steps>
+            <step id="CAP0e6ba25c-a8a1-45fb-a957-b0b85f743e38">
+               <cmd>1</cmd>
+            </step>
+            <step id="CAP0e6ba25c-a8a1-45fb-a957-9909e61e0a92">
+               <cmd>2</cmd>
+            </step>
+            <step id="CAP0e6ba25c-a8a1-45fb-a957-330b4842d9e1">
+               <cmd>3</cmd>
+            </step>
+            <step id="CAP0e6ba25c-a8a1-45fb-a957-c0b5891ce784">
+               <cmd>4</cmd>
+            </step>
+            <step id="CAP0e6ba25c-a8a1-45fb-a957-2c6215eb5cc3">
+               <cmd>5</cmd>
+            </step>
+         </steps>
+      </taskbody>
+	     <animation-links>
+         <media-3d href="res://res://Animated_procedure_test6479.x3d"/>
+         <tracking-config href="res://res://RF_Tracking_S10.zip"/>
+
+      </animation-links>
+   </animated-procedure>
+</topic>

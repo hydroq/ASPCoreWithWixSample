@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messages>
+<msg id="attention">Pozor</msg>
+<msg id="warning">Dôležité</msg>
+<msg id="note">Poznámky</msg>
+<msg id="important">Dôležité</msg>
+<msg id="lang">Slovenská</msg>
+<msg id="table">Výkres</msg>
+<msg id="page">str. </msg>
+<msg id="see">viď.</msg>
+<msg id="doctype">Návod na používanie a údržbu</msg>
+<msg id="figure">Obr.</msg>
+<msg id="service">Servis</msg>
+<msg id="section">Sekcia</msg>
+<msg id="toc">Obsah</msg>
+</messages>

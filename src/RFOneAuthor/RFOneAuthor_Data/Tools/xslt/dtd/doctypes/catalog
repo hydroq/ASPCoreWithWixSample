@@ -1,0 +1,84 @@
+--========================================================================--
+-- Demo DTDs  --
+--========================================================================--
+
+PUBLIC "-//XC-Demo//DTD Ownerguide//EN" "ownerGuide/ownerGuide.dtd"
+PUBLIC "-//XC-Demo//DTD Ownerguide EP//EN" "ownerGuide/ownersGuide_ep.dtd"
+
+PUBLIC "-//XC-Demo//DTD Workshop Manual//EN" "wsm/wsm.dtd"
+PUBLIC "-//XC-Demo//DTD Workshop Manual EP//EN" "wsm/wsm_ep.dtd"
+
+PUBLIC "-//XC//DTD genericrp og//EN" "ownerGuide/GenericReleasePlan_OG.dtd"
+PUBLIC "-//XC//DTD genericrp ep og//EN" "ownerGuide/GenericReleasePlan_ep_OG.dtd"
+
+PUBLIC "-//XC//DTD genericrp wsm//EN" "wsm/GenericReleasePlan_WSM.dtd"
+PUBLIC "-//XC//DTD genericrp ep wsm//EN" "wsm/GenericReleasePlan_ep_WSM.dtd"
+
+PUBLIC "-//XC//DTD genericcatalogrp catalog//EN" "ccatalog/GenericReleasePlan_EPCatalog.dtd"
+PUBLIC "-//XC//DTD genericcatalogrp ep//EN" "ccatalog/GenericReleasePlan_EPCatalog_ep.dtd"
+
+PUBLIC "-//XC//DTD EP Catalog//EN" "ccatalog/EditorialPlan_Catalog.dtd"
+PUBLIC "-//XC//DTD EP Catalog ep//EN" "ccatalog/EditorialPlan_Catalog_ep.dtd"
+
+PUBLIC "-//XC//DTD Cortona Catalog//EN" "ccatalog/catalog.dtd"
+
+PUBLIC "-//XC-Demo//Animated Procedure wsm//EN" "wsm/animated-procedure.dtd"
+
+-- Catalog for Dita --
+
+-- OASIS DITA 1.0 Catalog --
+
+-- Dita DTDs --
+
+PUBLIC "-//OASIS//ELEMENTS DITA Concept//EN" "ditabase/concept.mod"
+
+PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase/ditabase.dtd"
+
+PUBLIC "-//OASIS//ELEMENTS DITA Reference//EN" "ditabase/reference.mod"
+
+PUBLIC "-//OASIS//ELEMENTS DITA Task//EN" "ditabase/task.mod"
+
+PUBLIC "-//OASIS//ELEMENTS DITA Topic//EN" "ditabase/topic.mod"
+PUBLIC "-//OASIS//ENTITIES DITA Topic Class//EN" "ditabase/topicAttr.mod"
+PUBLIC "-//OASIS//ENTITIES DITA Topic Definitions//EN" "ditabase/topicDefn.ent"
+
+-- Domains --
+PUBLIC "-//OASIS//ELEMENTS DITA Highlight Domain//EN" "ditabase/highlightDomain.mod"
+PUBLIC "-//OASIS//ENTITIES DITA Highlight Domain//EN" "ditabase/highlightDomain.ent"
+
+PUBLIC "-//OASIS//ELEMENTS DITA Programming Domain//EN" "ditabase/programmingDomain.mod"
+PUBLIC "-//OASIS//ENTITIES DITA Programming Domain//EN" "ditabase/programmingDomain.ent"
+
+PUBLIC "-//OASIS//ELEMENTS DITA Software Domain//EN" "ditabase/softwareDomain.mod"
+PUBLIC "-//OASIS//ENTITIES DITA Software Domain//EN" "ditabase/softwareDomain.ent"
+
+PUBLIC "-//OASIS//ELEMENTS DITA User Interface Domain//EN" "ditabase/uiDomain.mod"
+PUBLIC "-//OASIS//ENTITIES DITA User Interface Domain//EN" "ditabase/uiDomain.ent"
+
+PUBLIC "-//OASIS//ELEMENTS DITA Utilities Domain//EN" "ditabase/utilitiesDomain.mod"
+PUBLIC "-//OASIS//ENTITIES DITA Utilities Domain//EN" "ditabase/utilitiesDomain.ent"
+
+-- Common --
+PUBLIC "-//OASIS//ELEMENTS DITA Metadata//EN" "ditabase/metaDecl.mod"
+PUBLIC "-//OASIS//ELEMENTS DITA CALS Tables//EN" "ditabase/tblDecl.mod"
+PUBLIC "-//OASIS//ELEMENTS DITA Exchange Table Model//EN" "ditabase/tblDecl.mod"
+
+-- reference --
+PUBLIC "-//IBM//DTD DITA Reference//EN" "ditabase/reference.dtd"
+PUBLIC "-//OASIS//DTD DITA Reference//EN" "ditabase/reference.dtd"
+
+-- task --
+PUBLIC "-//IBM//DTD DITA Task//EN" "ditabase/task.dtd"
+PUBLIC "-//OASIS//DTD DITA Task//EN" "ditabase/task.dtd"
+
+-- topic --
+PUBLIC "-//IBM//DTD DITA Topic//EN" "ditabase/topic.dtd"
+PUBLIC "-//OASIS//DTD DITA Topic//EN" "ditabase/topic.dtd"
+
+-- AR topic for Augmented Reality --
+PUBLIC "-//Bosch//ELEMENTS DITA AR Topic//EN" "dita-ar/artopic.mod"
+PUBLIC  "-//Bosch//ELEMENTS DITA Animated Procedure//EN" "dita-ar/artask.mod"
+PUBLIC "-//Bosch//ELEMENTS DITA Information Topic//EN" "dita-ar/arinfo.mod"
+-- AR domain with speical xref tags --
+PUBLIC  "-//Bosch//ENTITIES DITA Augmented Reality Domain//EN" "dita-ar/arDomain.ent"
+PUBLIC  "-//Bosch//ELEMENTS DITA Augmented Reality Domain//EN" "dita-ar/arDomain.mod"

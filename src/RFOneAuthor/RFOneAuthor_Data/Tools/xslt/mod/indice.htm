@@ -1,0 +1,207 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>Titolo</title>
+</head>
+
+<link rel="stylesheet" href="styles.css">
+<script language='javascript' src='toc.js'></script>
+<script>
+
+var		params		= GetParamsFrame();
+var		command 	= GetParam("command");
+var		value		= GetParam("value");
+var		exploded	= getVar("exploded");
+var		HTML_string	= "<table width=160 cellspacing=1 cellpadding=2 bgcolor=#FFFFFF>\n";
+
+if(command == "explode") {	exploded = "#" + value + "#";	}
+if(command == "implode") {	exploded = "";	}
+
+setVar("exploded", exploded);
+
+writeHTML();
+
+function writeHTML()
+{
+	var			i;
+	
+	for(i = 0; i < tocs.length; i++) {
+		if(tocs[i][1] == "paragrafo_0") {
+			HTML_string += "<tr class=T12 bgcolor=#000000><td>\n";
+			
+			writeLine(tocs[i]);
+			
+			if(isExploded(i)) {
+				HTML_string += "<br>\n<table width=100% cellspacing=1 cellpadding=0 border=0>\n";
+				i = writeElement(i, tocs[i][1]);
+				HTML_string += "</table>\n";
+			}
+			
+			HTML_string += "</td></tr>\n";
+		}
+	}
+	
+	HTML_string += "</table>";
+	
+	document.write(HTML_string);
+//	alert(HTML_string.substr(400));
+	
+}
+
+
+function isExploded(i)
+{
+	if(exploded.indexOf("#" + i + "#") != -1) {
+		return 1;
+	}
+	
+	return 0;
+}
+
+
+function writeElement(idx, type)
+{
+	var			i;
+	
+	for(i = idx + 1; i < tocs.length; i++) {
+		if(tocs[i][1] == type) {
+			return i - 1;
+		}
+		
+		writeLine(tocs[i]);
+	}
+}
+
+
+function writeLine(p)
+{
+	if(p[1] == "paragrafo_0") {
+		if(isExploded(p[0])) {
+			HTML_string += "<a href='indice.html?command=implode&value=" + p[0] + "'><b>" + p[2] + "</b></a>\n";
+		} else {
+			HTML_string += "<a href='indice.html?command=explode&value=" + p[0] + "'><b>" + p[2] + "</b></a>\n";
+		}
+		return;
+	}
+	
+	switch(p[1]) {
+		case "ParagrafoTOC":
+		HTML_string += "<tr><td height=4 colspan=4></td></tr>\n";
+		HTML_string += "<tr class=T10><td width=10></td><td colspan=2 valign=top>\n";
+		break;
+		
+		case "Paragrafo_PTOC":
+		HTML_string += "<tr><td height=4 colspan=4></td></tr>\n";
+		HTML_string += "<tr class=T10><td width=10></td><td colspan=2 valign=top>\n";
+		break;
+		
+		case "SOTTO_PARATOC":
+		HTML_string += "<tr class=T10><td width=10></td><td width=15 valign=top align=right>- </td><td valign=top>\n";
+		break;
+	}
+	
+	HTML_string += "<a href='" + p[3] + "' class=T10 target='main'>" + p[2] + "</a></td></tr>\n";
+}
+
+
+function GetParam(name)
+{
+	if(name == "")	{	return "";	}
+	
+	var		b	= params.indexOf("&" + name);
+	
+	if(b == -1)		{	return "";	}
+	
+	return params.substring(b + 1 + name.length + 1, params.indexOf("&", b + 1));
+}
+
+
+
+function GetParamsFrame()
+{
+	var		s	= new String(window.location);
+	var		pos	= s.indexOf("?");
+	
+	if(pos == -1)	{	return "";	}
+	
+	return "&" + s.substring(pos + 1, s.length) + "&";
+}
+
+
+function GetParams()
+{
+	var		s	= new String(window.parent.location);
+	var		pos	= s.indexOf("?");
+	
+	if(pos == -1)	{	return "";	}
+	
+	return "&" + s.substring(pos + 1, s.length) + "&";
+}
+
+
+function SetInnerHTML(id, s)
+{
+	var		obj = document.getElementById(id);
+	
+	if(obj == null)	{	return;	}
+	
+	obj.innerHTML = s;
+}
+
+
+// --- COOKIES ---
+function setVar(name, value) {
+	var today = new Date();
+	var expires = new Date();
+	expires.setTime(today.getTime() + 1000*60*60*24*365);
+
+	setCookie(name, value, expires);
+}
+
+function getVar(s) {
+	return getCookie(s);
+}
+
+
+function setCookie(name, value, expire) {
+	var		s = name + "=" + escape(value) + ((expire == null) ? ";" : ("; expires=" + expire.toGMTString()));
+	
+	document.cookie = s;
+}
+
+
+
+function getCookie(Name) {
+	var search = Name + "=";
+	
+	if (document.cookie.length > 0) { // if there are any cookies
+		offset = document.cookie.indexOf(search);
+		if (offset != -1) { // if cookie exists
+			offset += search.length;
+			
+			// set index of beginning of value
+			end = document.cookie.indexOf(";", offset);
+			
+			// set index of end of cookie value
+			if (end == -1) {
+				end = document.cookie.length;
+			}
+			return unescape(document.cookie.substring(offset, end));
+		} else {
+			return "";
+		}
+	} else {
+		return "";
+	}
+}
+
+</script>
+
+<!--
+<script src="functions.js"></script>
+<script src="tav_data.js"></script>
+-->
+
+<body bgcolor=#000000 topmargin=0 leftmargin=12 rightmargin=0 marginwidth=0 marginheight=0>
+
+<br>

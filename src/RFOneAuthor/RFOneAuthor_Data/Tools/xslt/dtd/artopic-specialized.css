@@ -1,0 +1,16 @@
+
+*[class~="poitopic/poi-3d-link"] {
+  color: blue;
+}
+
+*[class~="poitopic/poi-3d-link"]:before {
+  content: "Ref to ";
+}
+
+*[class~="poitopic/poi-3d-link"] > *:before {
+  content: ", " attr(name) ": " attr(value);
+}
+
+*[class~="poitopic/poi-3d-link"] > *:first-child:before {
+  content: attr(name) ": " attr(value);
+}

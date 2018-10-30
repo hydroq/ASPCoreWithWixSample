@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messages>
+	<msg id="attention">警告</msg>
+	<msg id="warning">注意</msg>
+	<msg id="note">参考</msg>
+	<msg id="important">重要</msg>
+	<msg id="lang">日本人</msg>
+	<msg id="table">表</msg>
+	<msg id="page">ページ </msg>
+	<msg id="see">参照</msg>
+	<msg id="doctype">オーナーズマニュアル</msg>
+	<msg id="figure">図</msg>
+	<msg id="service">サービス</msg>
+	<msg id="section">セクション</msg>
+	<msg id="toc">目次</msg>
+</messages>

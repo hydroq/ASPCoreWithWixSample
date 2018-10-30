@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messages>
+<msg id="attention">Вниманиe</msg>
+<msg id="warning">Предупреждение</msg>
+<msg id="note">Бележки</msg>
+<msg id="important">Важно</msg>
+	<msg id="lang">български</msg>
+<msg id="table">Таблица</msg>
+<msg id="page">стр.</msg>
+<msg id="see">виж </msg>
+<msg id="doctype">Наръчник за употреба и поддръжка</msg>
+<msg id="figure">Фиг.</msg>
+<msg id="service">Сервиз</msg>
+<msg id="section">Секция</msg>
+<msg id="toc">Съдържание</msg>
+</messages>
